@@ -31,7 +31,7 @@ def load_local_data_for_evolution_chart(file_path):
         st.error(f"File not found: {file_path}")
         return None
 
-@st.cache_data
+@st.cache_data(persist=True)
 def load_data(BASE_URL):
 
     SELECT_COLS = ",".join([
@@ -77,7 +77,7 @@ def load_data(BASE_URL):
     print("Final shape:", df.shape)
     return df
 
-@st.cache_data
+@st.cache_data(persist=True)
 def load_data_for_evolution_chart(BASE_URL):
     chunks = []
        
