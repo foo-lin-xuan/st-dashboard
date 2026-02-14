@@ -135,7 +135,7 @@ def prepare_top_districts(df, start_year=START_YEAR, end_year=2025, top_n=10):
     df_dist = df[
         (df['date'].dt.year >= start_year) &
         (df['date'].dt.year <= end_year)
-    ].copy()
+    ]
 
     df_dist['district'] = pd.to_numeric(df_dist['district'], errors='coerce')
 
